@@ -1,5 +1,5 @@
 // import dotenv library to use .env file to hide a specific environment variable
-require("dotenv").config();
+//require("dotenv").config();
 // import express framework to use express
 const express = require("express");
 //import mongoose library to use mongoose
@@ -14,7 +14,7 @@ const port = 3000;
 app.use(express.json());
 
 // connect with database using mongoose library
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb+srv://andolsikhalil98:OeiRaPxqeYdrmWDc@notes.fyu3os0.mongodb.net/?retryWrites=true&w=majority');
 
 // get response by cooncet with database
 const db = mongoose.connection;
