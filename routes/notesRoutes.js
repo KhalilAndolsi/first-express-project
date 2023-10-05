@@ -12,6 +12,11 @@ router.get("/note", async (req, res) => {
   }
 });
 
+// get all notes
+router.get("/test", (req, res) => {
+  res.status(200).json({message: process.env.MONGODB_URI})
+});
+
 // get one note by id
 router.get("/note/:id", async (req, res) => {
   try {
