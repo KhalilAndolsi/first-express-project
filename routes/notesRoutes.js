@@ -53,7 +53,7 @@ router.put("/note/:id", async (req, res) => {
   try {
     const {id} = req.params
     const dataUpdated = req.body
-    const NoteUpdated = await Notes.findByIdAndUpdate(id, dataUpdated, {new: true})
+    const NoteUpdated = await Notes.findByIdAndUpdate(id, {...dataUpdated, lastUpdate: new Date().toJSON()}, {new: true})
     res.status(200).json({message: "Updated note is successfully", NoteUpdated})
   } catch (err) {
     res.status(500).json({errore: err.message})
