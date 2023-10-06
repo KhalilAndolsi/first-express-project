@@ -17,6 +17,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+// get all notes
+router.get("/note", async (req, res) => {
+  try {
+    const notesData = await Notes.find();
+    res.status(200).json(notesData)
+  } catch (err) {
+    res.status(500).json({errore: err.message})
+  }
+});
+
 // get one note by id
 router.get("/note/:id", async (req, res) => {
   try {
