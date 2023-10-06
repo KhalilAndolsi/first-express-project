@@ -2,11 +2,16 @@ const express = require('express');
 const router = express.Router();
 const Notes = require('../modules/notes');
 
-// get all notes
-router.get("/note", async (req, res) => {
+// home page
+router.get("/", async (req, res) => {
   try {
-    const notesData = await Notes.find();
-    res.status(200).json(notesData)
+    const url = 'https://first-express-project-93j2.onrender.com/'
+    res.status(200).json({
+      allNotes: `${url}note`,
+      getNoteById: `${url}note/<id>`,
+      updateNote: `${url}note/<id>`,
+      deleteNote: `${url}note/<id>`,
+    })
   } catch (err) {
     res.status(500).json({errore: err.message})
   }
