@@ -9,7 +9,7 @@ const app = express();
 // import the routes (endPoints) file
 const notesRoutes = require("./routes/notesRoutes")
 // port of localHost server
-const port = 3000;
+const port = process.env.PORT || 5000;
 // to can use json for send responses or get requests
 app.use(express.json());
 
