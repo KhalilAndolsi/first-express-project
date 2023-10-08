@@ -2,10 +2,14 @@
 require("dotenv").config();
 // import express framework to use express
 const express = require("express");
+
+const cors = require("cors");
+
 //import mongoose library to use mongoose
 const mongoose = require("mongoose");
 // create the express app 
 const app = express();
+app.use(cors());
 // import the routes (endPoints) file
 const notesRoutes = require("./routes/notesRoutes")
 // port of localHost server
